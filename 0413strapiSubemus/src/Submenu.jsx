@@ -1,9 +1,5 @@
 import { useGlobalContext } from "./Context";
 import sublinks from "./data";
-/* zapochvame rabota v/u submenutata (tova, koeto tr da izliza, kogato
-hovernem v/u Produc/Solutions ili Resources)
-Zasega izglezhda dosta nekadyrno, ponezhe oshte nqmame CSS
- */
 const Submenu = () => {
   const { pageId } = useGlobalContext();
   const currentPage = sublinks.find((item) => item.pageId === pageId);
@@ -15,7 +11,7 @@ primer s edna ot stranicite (kakvo logva, kato hovernem):
   */
 
   return (
-    <div className="submenu">
+    <div className={currentPage ? "submenu show-submenu" : "submenu"}>
       <h5>{currentPage?.page}</h5>
       <div
         className="submenu-links"
