@@ -450,3 +450,41 @@ Sidebar
     display: none;
   }
 }
+
+/*syzdavane na NavLinks component-a, dobavqne na CSS za nego, no
+nachalen, nqma da e tozi okonchatleniq.
+Tezi navlinkove, kakto se vizhda dolu, sa vidimi pri > 992px */
+/*
+=============
+Nav Links
+===============
+*/
+.nav-links {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    border: 2px solid red;
+  }
+
+  .nav-center {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    border: 2px solid green;
+  }
+
+  .nav-link {
+    padding: 0 1rem;
+    color: var(--white);
+    background: transparent;
+    border-color: transparent;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+    cursor: pointer;
+    border: 2px solid blue;
+  }
+}
