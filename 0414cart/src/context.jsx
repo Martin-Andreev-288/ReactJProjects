@@ -1,6 +1,15 @@
 import { useContext, useReducer, useEffect, createContext } from "react";
 import reducer from "./reducer";
-// syzdavame reducer. Iznacqme reducer f-qta v otdelen fayl.
+// syzdavame otdelen fayl s razlichnite actions i gi importvame v actions i reducer.
+import {
+  CLEAR_CART,
+  REMOVE,
+  INCREASE,
+  DECREASE,
+  LOADING,
+  DISPLAY_ITEMS,
+} from "./actions";
+
 const AppContext = createContext();
 
 const initialState = {
