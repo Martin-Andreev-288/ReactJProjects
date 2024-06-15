@@ -1,10 +1,9 @@
 import CartItem from "./CartItem";
 import { useGlobalContext } from "./context";
 import cartItems from "./data";
-/* minavane kym map. Malko specifichno. Polezna informaciq v readme fayla - lekciq 280 - switch
-to map. Oshte 1 screenshot ot git graph, makar che v nego sa promeneni i kavichkite i tova obyrkva  */
+/* dobavqne na clear cart, t.e. kato natisnem clear cart butona vsichko se iztriva  */
 const CartContainer = () => {
-  const { cart } = useGlobalContext();
+  const { cart, clearCart } = useGlobalContext();
   const cartArray = Array.from(cart.entries());
 
   if (cartArray.length === 0) {
@@ -39,10 +38,7 @@ const CartContainer = () => {
             total <span>$10</span>
           </h5>
         </div>
-        <button
-          className="btn btn-hipster"
-          onClick={() => console.log("clear cart")}
-        >
+        <button className="btn btn-hipster" onClick={clearCart}>
           clear cart
         </button>
       </footer>
