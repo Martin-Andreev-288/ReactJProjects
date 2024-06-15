@@ -17,13 +17,27 @@ const reducer = (state, action) => {
         newCart.delete(action.payload.id);
         return { ...state, cart: newCart };
     }
-    // dobavqne funkcionalnost za increase butona na vseki item (da mozhe da se uvelichava),
-    // veche st trudno da zasnemem vsichko, qsno e kakvo ima gore
     if (action.type === INCREASE) {
         const newCart = new Map(state.cart);
         const itemId = action.payload.id;
         const item = newCart.get(itemId);
         const newItem = { ...item, amount: item.amount + 1 };
+        newCart.set(itemId, newItem);
+        return { ...state, cart: newCart };
+    }
+    /* dobavqme decrease, koeto e sys syshtata logika na increase. Edinstvena razlika -
+    ako ima samo 1 ostanalo i natisnem decrease (strelkata nadolu), item-a se iztriva*/
+    if (action.type === DECREASE) {
+        const newCart = new Map(state.cart);
+        const itemId = action.payload.id;
+        const item = newCart.get(itemId);
+
+        if (item.amount === 1) {
+            newCart.delete(itemId);
+            return { ...state, cart: newCart };
+        }
+
+        const newItem = { ...item, amount: item.amount - 1 };
         newCart.set(itemId, newItem);
         return { ...state, cart: newCart };
     }
