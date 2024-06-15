@@ -1,8 +1,6 @@
 import { useContext, useReducer, useEffect, createContext } from "react";
 import reducer from "./reducer";
 import cartItems from "./data";
-// Okonchatelen screenshot. Nachalo na fetchvane na danni (dovyrshvame v sledvashtoto video)
-// dobavqne na loading
 import {
   CLEAR_CART,
   REMOVE,
@@ -17,10 +15,10 @@ const url = "https://www.course-api.com/react-useReducer-cart-project";
 const AppContext = createContext();
 
 const initialState = {
-  loading: true, // dosega beshe false
-  cart: new Map(cartItems.map((item) => [item.id, item])),
+  loading: false, // tuk pak go slagame na false
+  cart: new Map(),
 };
-
+/*dovyrhsvane na loading-a, dobavqme go v reducer-a. Pravim taka i che da se displaynat vsichki item-i */
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { totalAmount, totalCost } = getTotals(state.cart);
@@ -38,9 +36,10 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: DECREASE, payload: { id } });
   };
   const fetchData = async () => {
+    dispatch({ type: LOADING });
     const response = await fetch(url);
     const cart = await response.json();
-    console.log(cart);
+    dispatch({ type: DISPLAY_ITEMS, payload: { cart } });
   };
   useEffect(() => {
     fetchData();
