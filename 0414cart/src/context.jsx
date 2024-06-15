@@ -25,9 +25,13 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: CLEAR_CART });
   };
 
+  const remove = (id) => {
+    dispatch({ type: REMOVE, payload: { id } });
+  };
+
   // i taka mozhem da dostypvame state-a ot cqloto prilozhenie
   return (
-    <AppContext.Provider value={{ ...state, clearCart }}>
+    <AppContext.Provider value={{ ...state, clearCart, remove }}>
       {children}
     </AppContext.Provider>
   );
