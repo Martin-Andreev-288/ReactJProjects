@@ -1,11 +1,18 @@
 import { useContext, useReducer, useEffect, createContext } from "react";
-// syzdavame context i proverqvame dali e syzdaden uspeshno. Za context-a ne napravih screenshot za predishniq proekt
+import reducer from "./reducer";
+// syzdavame reducer. Iznacqme reducer f-qta v otdelen fayl.
 const AppContext = createContext();
 
+const initialState = {
+  loading: false,
+  cart: [],
+};
+
 export const AppProvider = ({ children }) => {
-  const greeting = "hello";
+  const [state, dispatch] = useReducer(reducer, initialState);
+  // i taka mozhem da dostypvame state-a ot cqloto prilozhenie
   return (
-    <AppContext.Provider value={{ greeting }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
   );
 };
 
