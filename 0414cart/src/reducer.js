@@ -25,8 +25,6 @@ const reducer = (state, action) => {
         newCart.set(itemId, newItem);
         return { ...state, cart: newCart };
     }
-    /* dobavqme decrease, koeto e sys syshtata logika na increase. Edinstvena razlika -
-    ako ima samo 1 ostanalo i natisnem decrease (strelkata nadolu), item-a se iztriva*/
     if (action.type === DECREASE) {
         const newCart = new Map(state.cart);
         const itemId = action.payload.id;
