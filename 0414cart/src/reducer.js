@@ -11,11 +11,20 @@ const reducer = (state, action) => {
     if (action.type === CLEAR_CART) {
         return { ...state, cart: new Map() }
     }
-    /* dobavqme funkcionalnostta za remove na vsqko item. PRAVIM go taka, che da ne mutirame
-    mapa! Tr da se obryshta specialno vnimanie na tova, ne tr da mutirame */
+
     if (action.type === REMOVE) {
         const newCart = new Map(state.cart);
         newCart.delete(action.payload.id);
+        return { ...state, cart: newCart };
+    }
+    // dobavqne funkcionalnost za increase butona na vseki item (da mozhe da se uvelichava),
+    // veche st trudno da zasnemem vsichko, qsno e kakvo ima gore
+    if (action.type === INCREASE) {
+        const newCart = new Map(state.cart);
+        const itemId = action.payload.id;
+        const item = newCart.get(itemId);
+        const newItem = { ...item, amount: item.amount + 1 };
+        newCart.set(itemId, newItem);
         return { ...state, cart: newCart };
     }
     throw new Error(`no matching action type: ${action.type}`);
