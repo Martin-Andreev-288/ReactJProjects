@@ -1,8 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
 const AppContext = createContext();
-// okonchatelno ZASEGA. Pak da vidim kakvo logva kato natisnem za smqna kym noshtna i kym dnevna tema
-// IMA DETAYLNO OBQSNENIE V README FAYLA
 export const AppProvider = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 

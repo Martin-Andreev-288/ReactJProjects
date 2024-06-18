@@ -1,6 +1,5 @@
 import { useGlobalContext } from "./context";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
-// vnedrqvane na svetla/tymna tema (izpolzvame react icons). Estestveno, oshte ne raboti, samo ikonite se smenqt na tozi etap
 const ThemeToggle = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
   return (
