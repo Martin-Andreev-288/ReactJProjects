@@ -72,6 +72,18 @@ html {
   --darkModeTransition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
+/* kak da napravim taka, che da zadadem tymna tema za default, ako user-a si e izbral
+neq. Ppc na firefox se vizhda vednaga, za da vidim kak se poluchava v chrome, tr da
+instalirame neshto dopylnitelno -> tova v @media (otkomentiranoto)
+shte ni se pokazhe kak stava i s javascript */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --textColor: var(--dark-mode-text-color);
+    --backgroundColor: var(--dark-mode-bg-color);
+  }
+} */
+
 .dark-theme {
   --textColor: var(--dark-mode-text-color);
   --backgroundColor: var(--dark-mode-bg-color);
