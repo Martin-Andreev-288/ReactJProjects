@@ -1,15 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-
+import { useGlobalContext } from "./context";
+/* zapochvame tyrsachkata. Samo che tuk oshte ne e dovyrshena (kato napishem
+cat v neq, oshte si stoi na dog (tova, koeto e zadadeno v 6-ti red v context)) */
 const url =
-  "https://api.unsplash.com/search/photos?client_id=pyFtgHOiITJlJrUaat0dNT00TKcEasWWcAzG4n-ULNw&query=office";
+  "https://api.unsplash.com/search/photos?client_id=pyFtgHOiITJlJrUaat0dNT00TKcEasWWcAzG4n-ULNw";
 
 const Gallery = () => {
+  const { searchTerm } = useGlobalContext();
   const response = useQuery({
     queryKey: ["images"],
     queryFn: async () => {
-      const result = await axios.get(url);
-
+      const result = await axios.get(`${url}&query=${searchTerm}`);
       return result.data;
     },
   });
