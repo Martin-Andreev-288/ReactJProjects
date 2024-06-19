@@ -1,17 +1,22 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-// pyrvi routing. Ako napishem /about sled linka, shte zaredi about stranicata s "about page" nadpisa
+import {
+  About,
+  HomeLayout,
+  Landing,
+  Error,
+  Newsletter,
+  Cocktail,
+} from "./pages";
+/* syzdadohme 6 razlichni komponenta, no nqma nishto syshtestveno v tqh (samo imeto im), zatova ne gi snimam.
+i tuk imame samo 1 promqna v sravnenie s prednata lekciq - iznasqme 2 ot komponentite. Ako napishem /about sled localhost:5176, shte ni pokazhe sydyrzhanieto na About component-a */
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <h2>home page</h2>,
+    element: <HomeLayout />,
   },
   {
     path: "/about",
-    element: (
-      <div>
-        <h2>about page</h2>
-      </div>
-    ),
+    element: <About />,
   },
 ]);
 
