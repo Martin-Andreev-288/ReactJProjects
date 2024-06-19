@@ -1,6 +1,5 @@
 import { createClient } from "contentful";
 import { useEffect, useState } from "react";
-// fetchvane na proektite
 const client = createClient({
   space: "gqk0veg6v1tk",
   environment: "master",
