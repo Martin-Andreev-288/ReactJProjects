@@ -1,17 +1,17 @@
 import { createContext, useContext, useState, useEffect } from "react";
-
+// zapazvane na tymna tema s localStorage
 const AppContext = createContext();
-/*
-kak da napravim taka, che da zadadem tymna tema za default, ako user-a si e izbral
-neq - TOZI PYT S JAVASCRIPT!!!
-So every time you'll toggle the theme you'll change the value over here
- (i ni posochi dependency array-a v useEffecta s isDarkTheme)*/
 const getInitialDarkMode = () => {
   const prefersDarkMode = window.matchMedia(
     "(prefers-color-scheme:dark)"
   ).matches;
-  console.log(prefersDarkMode);
-  return prefersDarkMode;
+  const storedDarkMode = localStorage.getItem("darkTheme");
+
+  if (storedDarkMode === null) {
+    return prefersDarkMode;
+  }
+
+  return storedDarkMode === "true";
 };
 
 export const AppProvider = ({ children }) => {
@@ -20,10 +20,7 @@ export const AppProvider = ({ children }) => {
   const toggleDarkTheme = () => {
     const newDarkTheme = !isDarkTheme;
     setIsDarkTheme(newDarkTheme);
-    // za da sykratim tozi kod - mozhem da mahnem tezi dolni 2 reda i da
-    // dobavim "isDarkTheme" v dependency array-a na useEffect dolu
-    // const body = document.querySelector("body");
-    // body.classList.toggle("dark-theme", newDarkTheme);
+    localStorage.setItem("darkTheme", newDarkTheme);
   };
 
   useEffect(() => {
