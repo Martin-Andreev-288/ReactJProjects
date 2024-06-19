@@ -1,9 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Wrapper from "../assets/wrappers/Navbar";
-/* tuk direktno vnasqm CSS-a za navbar, koyto e napraven chrez styled components
-Vizhda se vyv fayla vstrani na screenshot-a.
-VNIMANIE! STRANICATA IZGLEZHDA RAZLICHNO NA PO-MALYK EKRAN, tova e versiqta NAD 768px*/
 const Navbar = () => {
   return (
     <Wrapper>
