@@ -1,18 +1,13 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-// styled components, pyrva lekciq
-const StyledBtn = styled.button`
-  background: red;
-  color: white;
-  font-size: 2rem;
-  padding: 1rem;
-`;
-
+import Wrapper from "../assets/wrappers/Navbar";
+/* tuk direktno vnasqm CSS-a za navbar, koyto e napraven chrez styled components
+Vizhda se vyv fayla vstrani na screenshot-a.
+VNIMANIE! STRANICATA IZGLEZHDA RAZLICHNO NA PO-MALYK EKRAN, tova e versiqta NAD 768px*/
 const Navbar = () => {
   return (
-    <nav>
+    <Wrapper>
       <div className="nav-center">
-        <StyledBtn>styled btn</StyledBtn>
         <span className="logo">MixMaster</span>
         <div className="nav-links">
           <NavLink to="/" className="nav-link">
@@ -26,16 +21,14 @@ const Navbar = () => {
           </NavLink>
         </div>
       </div>
-    </nav>
+    </Wrapper>
   );
 };
 export default Navbar;
 
 /*
-The NavLink component extends the functionality of Link by allowing you to apply styles or classes to the link when it is active (i.e., when the current URL matches the link's target).
-This is particularly useful for creating navigation menus where you want to highlight the currently active link.
-...
-Conclusion
-Use Link for basic navigation needs without the need for active state styling.
-Use NavLink when you need to style or apply classes to the active link, such as in navigation menus.
+ako naprimer imame "logo" (ime na class) i v drug komponent, tova nqma da e problem.
+Ako go imame globalno obache, shte e problem.
+Name kolizii NE SE sluchvat s drugi komponenti, no s globalni elementi - da. Zatova tr da
+vnimavame
 */
