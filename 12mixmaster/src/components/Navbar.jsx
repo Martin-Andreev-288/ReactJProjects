@@ -1,9 +1,18 @@
 import { NavLink } from "react-router-dom";
-// i sega ako kliknem na home - shte ni otvede do home (kydeto sme i na snimkata), syotvetno about shte ni otvede v about i newsletter shte ni otvede v newsletter
+import styled from "styled-components";
+// styled components, pyrva lekciq
+const StyledBtn = styled.button`
+  background: red;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
+`;
+
 const Navbar = () => {
   return (
     <nav>
       <div className="nav-center">
+        <StyledBtn>styled btn</StyledBtn>
         <span className="logo">MixMaster</span>
         <div className="nav-links">
           <NavLink to="/" className="nav-link">
