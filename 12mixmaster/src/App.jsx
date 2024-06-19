@@ -7,16 +7,30 @@ import {
   Newsletter,
   Cocktail,
 } from "./pages";
-/* syzdadohme 6 razlichni komponenta, no nqma nishto syshtestveno v tqh (samo imeto im), zatova ne gi snimam.
-i tuk imame samo 1 promqna v sravnenie s prednata lekciq - iznasqme 2 ot komponentite. Ako napishem /about sled localhost:5176, shte ni pokazhe sydyrzhanieto na About component-a */
+/* za da nqma problemi kato se vyrnem v home stranicata (zashtoto se poluchavashe neshto ne kakto trqbva taka), tr da posochim koq stranica da byde index. Tova v sluchaq e landing.
+Kak go pravim - vmesto path: "/landing", pishem index: true, */
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
-  },
-  {
-    path: "/about",
-    element: <About />,
+    children: [
+      {
+        index: true,
+        element: <Landing />,
+      },
+      {
+        path: "/cocktail",
+        element: <Cocktail />,
+      },
+      {
+        path: "/newsletter",
+        element: <Newsletter />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+    ],
   },
 ]);
 

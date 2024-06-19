@@ -1,12 +1,15 @@
-import { Link } from "react-router-dom";
-/* izpolzvane na Link. Taka ako cyknem na About page - shte ni otvede v neq. Kato vlezem v neq ako cyknem na Home page - shte ni otvede v neq.
-tova raboti na principa na linka, no Link e samo za componenti. Ako iskame da ni prenasochva kym link, koyto ne e component ili fayl ot prilozhenieto - tr pak da go napravim po standartniq nachin, pr:
-<a href='https://johnsmilga.com/'>best web dev courses</a> */
+import { Outlet } from "react-router-dom";
+/* vazhna lekciq za nestvane - ako iskame da imame edno i syshto neshto na vseki komponent - nachinyt e tozi (s nestvane). Po standartniq nachin, za koyto lektoryt spomena - da syzdadem navbar i da go
+importvame vyv vsichki stranici, no taka tr da povtarqme mn kod, a i ako iskame da napravim nqkakvi promeni (primerno da dobavim footer), shte stane tegavo (t.e. dokolkoto razbiram, shte stane oshte
+po-zdravo povtarqne na kod).
+Zatova pravim tova - po-dolu v ili pod <HomeLayout /> nestvame vsichki drugi komponenti i tuk tozi <nav>navbar<nav> shte go ima vyv vseki edin ot tqh. Osven tozi, shte napravq oshte 2 screenshot-a, za
+da se vidi qsno. A <Outlet /> tuk syotvetno e prosto sydyrzhanieto na konkretniq component, koyto sme zaredili v stranicata (to v sluchaq shte doyde pod navbar-a).
+ */
 const HomeLayout = () => {
   return (
     <div>
-      <h1>HomeLayout</h1>
-      <Link to="about">About Page</Link>
+      <nav>navbar</nav>
+      <Outlet />
     </div>
   );
 };
