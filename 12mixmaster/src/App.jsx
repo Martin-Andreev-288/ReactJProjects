@@ -7,12 +7,11 @@ import {
   Newsletter,
   Cocktail,
 } from "./pages";
-/* za da nqma problemi kato se vyrnem v home stranicata (zashtoto se poluchavashe neshto ne kakto trqbva taka), tr da posochim koq stranica da byde index. Tova v sluchaq e landing.
-Kak go pravim - vmesto path: "/landing", pishem index: true, */
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
