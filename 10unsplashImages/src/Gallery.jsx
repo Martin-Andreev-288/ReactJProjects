@@ -1,13 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useGlobalContext } from "./context";
-/* Predi we weren't able to see the latest results
-t.e. (dyrveno obqsnenie, no vse pak) tr da se smeni i queryKey-a (koyto v nachaloto
-na tova video e queryKey: ["images"]. ReactQuery keshira rezultatite i se poluchava
-problem.  KAK GO POPRAVQME - ami v sluchaq prosto dobavqme searchTerm sled "images").
-INTERESNO NESHTO I NESHTO POLEZNO ZA REACT QUERY - ako veche sme tyrsili s nqkakva
-tema i po-kysno potyrsim pak s neq, v sledvashtite pyti shte zarezhda momentalno,
-bez zabavqne, kakto e samo v pyrviq pyt */
 const url =
   "https://api.unsplash.com/search/photos?client_id=pyFtgHOiITJlJrUaat0dNT00TKcEasWWcAzG4n-ULNw";
 

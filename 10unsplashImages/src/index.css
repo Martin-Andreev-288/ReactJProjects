@@ -75,7 +75,8 @@ html {
 /* kak da napravim taka, che da zadadem tymna tema za default, ako user-a si e izbral
 neq. Ppc na firefox se vizhda vednaga, za da vidim kak se poluchava v chrome, tr da
 instalirame neshto dopylnitelno -> tova v @media (otkomentiranoto)
-shte ni se pokazhe kak stava i s javascript */
+shte ni se pokazhe kak stava i s javascript -> V CONTEXT.JSX V TOZI SCREENSHOT
+SE POKAZVA TOCHNO TOVA */
 
 /* @media (prefers-color-scheme: dark) {
   :root {
