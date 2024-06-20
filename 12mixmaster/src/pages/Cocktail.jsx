@@ -1,10 +1,9 @@
 import { useLoaderData, Link } from "react-router-dom";
 import axios from "axios";
 import Wrapper from "../assets/wrappers/CocktailPage";
-// veche imame info za vseki otdelen cocktail, kato go otvorim
 const singleCocktailUrl =
   "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
-
+// KRAEN REZULTAT sys systavkite
 export const loader = async ({ params }) => {
   const { id } = params;
   const { data } = await axios.get(`${singleCocktailUrl}${id}`);
@@ -25,6 +24,12 @@ const Cocktail = () => {
     strGlass: glass,
     strInstructions: instructions,
   } = singleDrink;
+
+  const validIngredients = Object.keys(singleDrink)
+    .filter(
+      (key) => key.startsWith("strIngredient") && singleDrink[key] !== null
+    )
+    .map((key) => singleDrink[key]);
 
   return (
     <Wrapper>
@@ -52,6 +57,17 @@ const Cocktail = () => {
           <p>
             <span className="drink-data">glass :</span>
             {glass}
+          </p>
+          <p>
+            <span className="drink-data">ingredients :</span>
+            {validIngredients.map((item, index) => {
+              return (
+                <span className="ing" key={item}>
+                  {item}
+                  {index < validIngredients.length - 1 ? "," : ""}
+                </span>
+              );
+            })}
           </p>
           <p>
             <span className="drink-data">instructions :</span>
