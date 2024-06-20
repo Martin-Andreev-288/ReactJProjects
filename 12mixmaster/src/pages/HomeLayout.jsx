@@ -7,7 +7,6 @@ access, which is super cool, so we don't have to set up anything from scratch. T
 i da ne vzimash predvid tova value = 'some value' */
 const HomeLayout = () => {
   const navigation = useNavigation();
-  console.log(navigation);
   const isPageLoading = navigation.state === "loading";
   const value = "some value";
   return (
