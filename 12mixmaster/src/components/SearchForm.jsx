@@ -1,7 +1,7 @@
 import Wrapper from "../assets/wrappers/SearchForm";
 import { Form, useNavigation } from "react-router-dom";
-// zapochvame search formata
-const SearchForm = () => {
+// tova sys searchTerm i defaultValue={searchTerm} go pravim, za da ne ostava nay-pyrvoto neshto, s koeto sme tyrsili, v tyrsachkata, ami da si se promenq
+const SearchForm = ({ searchTerm }) => {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
   return (
@@ -11,7 +11,7 @@ const SearchForm = () => {
           type="search"
           name="search"
           className="form-input"
-          defaultValue="vodka"
+          defaultValue={searchTerm}
         />
         <button type="submit" className="btn" disabled={isSubmitting}>
           {isSubmitting ? "searching..." : "search"}
