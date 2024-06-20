@@ -18,7 +18,6 @@ export const action = async ({ request }) => {
     return error;
   }
 };
-// pravim taka, che kato natisnem 'submit', butonyt 'submit' da se promenq na 'submitting' i da se deaktivira, t.e. da ne mozhe da se natisne. Izpolzvame useNavigation(). Nqma screenshot ot web stranicata
 const Newsletter = () => {
   // tuk gledame kak da submitnem formi v po-novata React Router versiq
   const navigation = useNavigation();
