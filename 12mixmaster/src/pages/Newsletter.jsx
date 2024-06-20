@@ -1,15 +1,24 @@
-import { Form } from "react-router-dom";
-/* MNOGO E VAZHNO da ima name v input-a, inache tazi funkcionalnost (t.e. dokolkoto
-shvanah neshtata ot prednite screenshot-i i tezi ot tazi lekciq) nqma da rabotqt
-AKO SAMO DOBAVQ required v input-a - nqma da mozhe da submitnem formata, ako tova konkretno
-pole e prazno (dobavqm go tuk, za da se vidi, sled tova go triq, ponezhe i instruktora go
-iztri) */
+import { Form, redirect } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
+/* Kogato napravim greshka, v povecheto sluchai tuk ni preprashta kym nova stranica, koqto ni uvedomqva, che ima greshka. No v nqkoi sluchai tova e glupavo (naprimer ako
+meylyt e nepravilen tip). Zatova pravim taka, che prosto da ni izskacha uvedomitelno syobshtenie, ako sluchayno sluchaqt e takyv. */
+const newsletterUrl = "https://www.course-api.com/cocktails-newsletter";
+
 export const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
-  console.log(data);
 
-  return null;
+  try {
+    const response = await axios.post(newsletterUrl, data);
+
+    toast.success(response.data.msg);
+    return redirect("/");
+  } catch (error) {
+    console.log(error);
+    toast.error(error?.response?.data?.msg);
+    return error;
+  }
 };
 
 const Newsletter = () => {
@@ -30,7 +39,6 @@ const Newsletter = () => {
           name="name"
           id="name"
           required
-          defaultValue="john"
         />
       </div>
       {/* lastName */}
@@ -43,7 +51,7 @@ const Newsletter = () => {
           className="form-input"
           name="lastName"
           id="lastName"
-          defaultValue="smith"
+          required
         />
       </div>
       {/* email */}
@@ -57,6 +65,7 @@ const Newsletter = () => {
           name="email"
           id="email"
           defaultValue="test@test.com"
+          required
         />
       </div>
       <button
