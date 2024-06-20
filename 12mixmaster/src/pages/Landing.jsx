@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import axios from "axios";
 import CocktailList from "../components/CocktailList";
-// zapochvame da izobrazqvame cocktail list-a (zasega se renderira "CocktaiCard" 25 pyti)
 const cocktailSearchUrl =
   "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 

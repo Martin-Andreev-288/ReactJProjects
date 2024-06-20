@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Wrapper from "../assets/wrappers/CocktailCard";
-/* renderirat se "kartichkite" na vsichki kokteyli. Ako cyknem na "Details", zasega se
-pokazva samo "Cocktail" */
+// snimka samo za CSS-a
 const CocktailCard = ({ image, name, id, info, glass }) => {
   return (
     <Wrapper>
