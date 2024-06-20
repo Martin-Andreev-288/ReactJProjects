@@ -1,6 +1,6 @@
 import Wrapper from "../assets/wrappers/SearchForm";
 import { Form, useNavigation } from "react-router-dom";
-// tova sys searchTerm i defaultValue={searchTerm} go pravim, za da ne ostava nay-pyrvoto neshto, s koeto sme tyrsili, v tyrsachkata, ami da si se promenq
+// search form css (samo css-a)
 const SearchForm = ({ searchTerm }) => {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";

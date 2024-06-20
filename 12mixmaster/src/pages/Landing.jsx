@@ -4,7 +4,7 @@ import CocktailList from "../components/CocktailList";
 import SearchForm from "../components/SearchForm";
 const cocktailSearchUrl =
   "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
-// dovyrshvame tyrsachkata
+//
 export const loader = async ({ request }) => {
   const url = new URL(request.url);
 
