@@ -1,9 +1,9 @@
-import { useLoaderData, Link } from "react-router-dom";
+import { useLoaderData, Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import Wrapper from "../assets/wrappers/CocktailPage";
 const singleCocktailUrl =
   "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
-// KRAEN REZULTAT sys systavkite
+//
 export const loader = async ({ params }) => {
   const { id } = params;
   const { data } = await axios.get(`${singleCocktailUrl}${id}`);
@@ -13,6 +13,11 @@ export const loader = async ({ params }) => {
 
 const Cocktail = () => {
   const { id, data } = useLoaderData();
+  /* ako sme v nqkoy kokteyl i dobavim nqkoq bukva (naprimer), pravim taka, che da izleze
+drugo. Pyrvo napravihme opit s tova pyrvoto, sled tova s Navigate (da ni prenasochi kym
+home stranicata) */
+  // if (!data) return <h2>something went wrong...</h2>;
+  if (!data) return <Navigate to="/" />;
 
   const singleDrink = data.drinks[0];
 
