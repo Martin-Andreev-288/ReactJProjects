@@ -1,7 +1,7 @@
-// zapochvame s Newsletter. Dokolkoto shvanah - ideqta e da pokazhem neshto svyrzano s noviq routing (zashtoto may tozi, koyto dosega pravihme, e po-predishna versiq)
 const Newsletter = () => {
+  // s vite mozhem da prashtame get zaqvki, no pri post zaqvkite stava obyrkvane. Ako dobavim method='POST' taka, shte stane greshka. V drugata lekciq se pokazva kak mozhe da stane tova
   return (
-    <form className="form">
+    <form className="form" method="POST">
       <h4 style={{ textAlign: "center", marginBottom: "2rem" }}>
         our newsletter
       </h4>
