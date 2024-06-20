@@ -1,7 +1,21 @@
+import { Form } from "react-router-dom";
+/* MNOGO E VAZHNO da ima name v input-a, inache tazi funkcionalnost (t.e. dokolkoto
+shvanah neshtata ot prednite screenshot-i i tezi ot tazi lekciq) nqma da rabotqt
+AKO SAMO DOBAVQ required v input-a - nqma da mozhe da submitnem formata, ako tova konkretno
+pole e prazno (dobavqm go tuk, za da se vidi, sled tova go triq, ponezhe i instruktora go
+iztri) */
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  console.log(data);
+
+  return null;
+};
+
 const Newsletter = () => {
-  // s vite mozhem da prashtame get zaqvki, no pri post zaqvkite stava obyrkvane. Ako dobavim method='POST' taka, shte stane greshka. V drugata lekciq se pokazva kak mozhe da stane tova
+  // tuk gledame kak da submitnem formi v po-novata React Router versiq
   return (
-    <form className="form" method="POST">
+    <Form className="form" method="POST">
       <h4 style={{ textAlign: "center", marginBottom: "2rem" }}>
         our newsletter
       </h4>
@@ -15,6 +29,7 @@ const Newsletter = () => {
           className="form-input"
           name="name"
           id="name"
+          required
           defaultValue="john"
         />
       </div>
@@ -51,7 +66,7 @@ const Newsletter = () => {
       >
         submit
       </button>
-    </form>
+    </Form>
   );
 };
 export default Newsletter;
