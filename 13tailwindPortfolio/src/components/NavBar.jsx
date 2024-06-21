@@ -1,5 +1,4 @@
 import { links } from "../data";
-// zapochvame navbar komponent-a
 const Navbar = () => {
   return (
     <nav className="bg-emerald-100">
