@@ -6,8 +6,6 @@ const cocktailSearchUrl =
   "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
 import { useQuery } from "@tanstack/react-query";
-/* loader ne e hook, i tr da prefakturirame koda, za da prilozhim i react query. Tuk, kakto
-instruktoryt se izrazi, situaciqta stava malko "funky" i e trudno da se shvane. */
 const searchCocktailsQuery = (searchTerm) => {
   return {
     queryKey: ["search", searchTerm || "all"],
