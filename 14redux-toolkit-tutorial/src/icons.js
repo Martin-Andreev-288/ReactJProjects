@@ -1,5 +1,4 @@
-/* gleday samo tozi fayl za tozi screenshot.
-SAMO za info - tuk vzimame ikonki ot https://heroicons.com/. Vizh v Navbar. */
+/* tuk vzimame ikonki ot https://heroicons.com/ */
 
 export const CartIcon = () => {
   return (
