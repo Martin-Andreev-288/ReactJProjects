@@ -13,8 +13,6 @@ import {
 import { loader as landingLoader } from "./pages/Landing";
 import { loader as singleCocktailLoader } from "./pages/Cocktail";
 import { action as newsletterAction } from "./pages/Newsletter";
-/* ponezhe imame keshirani rezultatite - shte se pazi kakvoto sme tyrsili v tova neshto sys
-cveteto na ekrana. Tuk sme napravili taka, che da gi pazi 5 minuti (v prednata lekciq).  */
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -33,7 +31,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Landing />,
         errorElement: <SinglePageError />,
-        loader: landingLoader,
+        loader: landingLoader(queryClient),
       },
       {
         path: "/cocktail/:id",
