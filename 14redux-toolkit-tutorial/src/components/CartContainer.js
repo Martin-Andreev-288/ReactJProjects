@@ -1,6 +1,6 @@
 import CartItem from "./CartItem";
 import { useSelector } from "react-redux";
-// zapochvame da renderirame item-ite, pyrva stypka. Pak s useSelector.
+//
 const CartContainer = () => {
     const { cartItems, total, amount } = useSelector((store) => store.cart);
 
