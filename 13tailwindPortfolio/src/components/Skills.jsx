@@ -1,10 +1,6 @@
 import { skills } from "../data";
 import SectionTitle from "./SectionTitle";
 import SkillsCard from "./SkillsCard";
-/* nqkolko neshta
-1. implementirame skills
-2. pravim taka, che da mozhe da se skrolva smooth (v index.html)
-3. tova go pravq az - pravim taka, che da ne ni izskacha greshka pri tova pravilo za lipsvashti prop-types */
 const Skills = () => {
   return (
     <section className="py-20 align-element" id="skills">
