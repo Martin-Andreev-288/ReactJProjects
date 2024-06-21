@@ -1,6 +1,5 @@
 import aboutSvg from "../assets/about.svg";
 import SectionTitle from "./SectionTitle";
-// pravim about stranicata, pri po-golqm ekran se deli na dve
 const About = () => {
   return (
     <section className="bg-white py-20" id="about">
