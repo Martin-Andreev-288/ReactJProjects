@@ -1,10 +1,12 @@
 import heroImg from "../assets/hero.svg";
 import { FaGithubSquare, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
-// syzdavame Hero komponenta
+/* kak mozhe da si syzdadem sobstven klas i da go izpolzvame. V sluchaq mahnahme mx-auto max-w-7xl px-8
+ot Hero i NavBar, syzdadohme go po tozi nachin v index.css i posle v Hero i Navbar napisahme align-element,
+kakto go i ozaglavihme v index.css i si se poluchi syshtoto */
 const Hero = () => {
   return (
     <div className="bg-emerald-100 py-24">
-      <div className="mx-auto max-w-7xl px-8 grid md:grid-cols-2 items-center gap-8">
+      <div className="align-element grid md:grid-cols-2 items-center gap-8">
         <article>
           <h1 className="text-7xl font-bold tracking-wider">I'm John</h1>
           <p className="mt-4 text-3xl text-slate-700 capitalize tracking-wide">
