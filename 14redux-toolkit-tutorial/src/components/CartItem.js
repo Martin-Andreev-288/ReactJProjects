@@ -1,7 +1,8 @@
 import { ChevronDown, ChevronUp } from "../icons";
-import { removeItem } from "../features/cart/cartSlice";
+import { removeItem, increase, decrease } from "../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
-// mozhem veche da premahvame item/i s remove, no obshtoto kolichestvo vse oshte ne se povliqva ot tova
+/* veche trudno da se zasneme vsichko. Pravim taka, che da mozhe da se uvelichava kolichestvoto na daden
+konkretno zakupen item. Ako e edno i natisnem da namali - se premahva */
 const CartItem = ({ id, img, title, price, amount }) => {
     const dispatch = useDispatch();
     return (
@@ -20,11 +21,22 @@ const CartItem = ({ id, img, title, price, amount }) => {
                 </button>
             </div>
             <div>
-                <button className="amount-btn">
+                <button className="amount-btn"
+                    onClick={() => {
+                        dispatch(increase({ id }));
+                    }}
+                >
                     <ChevronUp />
                 </button>
                 <p className="amount">{amount}</p>
-                <button className="amount-btn">
+                <button className="amount-btn"
+                    onClick={() => {
+                        if (amount === 1) {
+                            dispatch(removeItem(id));
+                            return
+                        }
+                        dispatch(decrease({ id }));
+                    }}>
                     <ChevronDown />
                 </button>
             </div>
