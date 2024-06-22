@@ -1,7 +1,6 @@
 import CartItem from "./CartItem";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../features/cart/cartSlice";
-// implementirame clear cart butona. Dosta po-lesno (spored instruktora) s redux.
 const CartContainer = () => {
     const dispatch = useDispatch();
     const { cartItems, total, amount } = useSelector((store) => store.cart);
