@@ -1,8 +1,6 @@
 import { ChevronDown, ChevronUp } from "../icons";
 import { removeItem, increase, decrease } from "../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
-/* veche trudno da se zasneme vsichko. Pravim taka, che da mozhe da se uvelichava kolichestvoto na daden
-konkretno zakupen item. Ako e edno i natisnem da namali - se premahva */
 const CartItem = ({ id, img, title, price, amount }) => {
     const dispatch = useDispatch();
     return (
