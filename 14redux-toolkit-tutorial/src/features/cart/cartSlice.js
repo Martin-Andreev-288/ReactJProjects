@@ -1,5 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import cartItems from '../../cartItems';
+/* zapochvame da fetchvame dannite ot link, vmesto ot fayl v prilozhenieto.
+We cannot just simoly set this up in our current reducers, it's not going to work.
+That's why with redux toolkit, we install another library, the think one, and
+from the redux toolkit we get this createAsyncThunk and we right away wanna
+invoke it and we wanna export the result */
+const url = 'https://www.course-api.com/react-useReducer-cart-project';
 
 const initialState = {
     cartItems: cartItems,
@@ -7,6 +13,12 @@ const initialState = {
     total: 0,
     isLoading: true,
 };
+
+export const getCartItems = createAsyncThunk('cart/getCartItems', () => {
+    return fetch(url)
+        .then((resp) => resp.json())
+        .catch((err) => console.log(err));
+})
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -40,6 +52,19 @@ const cartSlice = createSlice({
             state.total = total;
         }
     },
+    extraReducers: {
+        [getCartItems.pending]: (state) => {
+            state.isLoading = true;
+        },
+        [getCartItems.fulfilled]: (state, action) => {
+            console.log(action);
+            state.isLoading = false;
+            state.cartItems = action.payload;
+        },
+        [getCartItems.rejected]: (state) => {
+            state.isLoading = false;
+        }
+    }
 });
 
 export const { clearCart, removeItem, increase, decrease, calculateTotals } = cartSlice.actions;
