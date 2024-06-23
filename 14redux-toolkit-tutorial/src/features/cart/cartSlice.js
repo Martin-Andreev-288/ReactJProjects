@@ -1,10 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import cartItems from '../../cartItems';
-/* zapochvame da fetchvame dannite ot link, vmesto ot fayl v prilozhenieto.
-We cannot just simoly set this up in our current reducers, it's not going to work.
-That's why with redux toolkit, we install another library, the think one, and
-from the redux toolkit we get this createAsyncThunk and we right away wanna
-invoke it and we wanna export the result */
+/* all of the functionality we have learned so far stays the same. The only difference is how we
+invoke it here, that's it */
 const url = 'https://www.course-api.com/react-useReducer-cart-project';
 
 const initialState = {
@@ -52,19 +49,33 @@ const cartSlice = createSlice({
             state.total = total;
         }
     },
-    extraReducers: {
-        [getCartItems.pending]: (state) => {
-            state.isLoading = true;
-        },
-        [getCartItems.fulfilled]: (state, action) => {
-            console.log(action);
-            state.isLoading = false;
-            state.cartItems = action.payload;
-        },
-        [getCartItems.rejected]: (state) => {
-            state.isLoading = false;
-        }
-    }
+    extraReducers: (builder) => {
+        builder
+            .addCase(getCartItems.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(getCartItems.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.cartItems = action.payload;
+            })
+            .addCase(getCartItems.rejected, (state, action) => {
+                console.log(action);
+                state.isLoading = false;
+            });
+    },
+    // extraReducers: {
+    //     [getCartItems.pending]: (state) => {
+    //         state.isLoading = true;
+    //     },
+    //     [getCartItems.fulfilled]: (state, action) => {
+    //         console.log(action);
+    //         state.isLoading = false;
+    //         state.cartItems = action.payload;
+    //     },
+    //     [getCartItems.rejected]: (state) => {
+    //         state.isLoading = false;
+    //     }
+    // }
 });
 
 export const { clearCart, removeItem, increase, decrease, calculateTotals } = cartSlice.actions;
