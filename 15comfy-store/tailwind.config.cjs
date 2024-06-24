@@ -8,4 +8,8 @@ export default {
     extend: {},
   },
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  daisyui: {
+    themes: ['light'],
+    // Only include the light theme - dobavih go, zashtoto nz zashto beshe na cherna tema
+  },
 };
