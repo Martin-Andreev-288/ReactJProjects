@@ -1,4 +1,3 @@
-// syzdavame about stranicata, otnovo sys zaimstvane ot daisyUI
 const About = () => {
   return (
     <>
