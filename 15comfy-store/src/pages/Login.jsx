@@ -1,7 +1,5 @@
 import { FormInput, SubmitBtn } from "../components";
 import { Form, Link } from "react-router-dom";
-/* Startirame logina. Tuk izpolzvame daisy UI (link v ediniq classname dolu, syshto i v classname-a za Form po-gore, idvat ot tam).
-Za instructura place-items-center e edno ot nay-qkite neshta v tailwind (ne se pritesnqvame za horizontal i vertical layout) */
 const Login = () => {
   return (
     <section className="h-screen grid place-items-center">
