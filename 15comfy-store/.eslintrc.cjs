@@ -17,5 +17,9 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    "rules": {
+      "react/prop-types": 0
+    }
   },
 }
+// mahnahme izskachashtata greshka za prop-types

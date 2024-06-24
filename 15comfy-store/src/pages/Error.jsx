@@ -1,7 +1,4 @@
 import { useRouteError, Link } from "react-router-dom";
-/* pravim taka, che ako greshkata e 404, da se poqvi specialna stranica. I da ima
-buton, koyto ako cyknem - da ni zavede v home stranicata.
-Ako e drug tip greshka - shte se poqvi prosto "there was an error..."*/
 const Error = () => {
   const error = useRouteError();
   console.log(error);
