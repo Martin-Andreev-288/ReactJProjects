@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* pravim taka, che da mozhem da prilagame ednakvo podravnqvane na sydyrzhanieto na vsichki stranici. Navbara oshte ne e podravnen, no se vizhda v primera vdqsno s Landing. */
+@layer components {
+    .align-element {
+        @apply mx-auto max-w-6xl px-8;
+    }
+}
