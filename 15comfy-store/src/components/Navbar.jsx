@@ -3,7 +3,7 @@ import { FaBarsStaggered } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import NavLinks from "./NavLinks";
 import { useState } from "react";
-/* postavqme ikonkata za smqna mezhu dneven/noshten rezhim, koqto oshte ne raboti, est. Izpolzvame daisyUI */
+/*syzdavame ikonkata za smqna mezhdu dneven/noshten rezhim, koqto oshte ne raboti, est. Izpolzvame daisyUI. */
 const Navbar = () => {
   const [theme, setTheme] = useState(false);
   const handleTheme = () => {
@@ -40,17 +40,15 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {/* THEME ICONS */}
-          <div className="navbar-end">
-            <label className="swap swap-rotate ">
-              {/* this hidden checkbox controls the state */}
-              <input type="checkbox" onChange={handleTheme} />
-              {/* sun icon */}
-              <BsSunFill className="swap-on h-4 w-4" />
-              {/* moon icon */}
-              <BsMoonFill className="swap-off h-4 w-4" />
-            </label>
-          </div>
-          ;{/* CART LINK*/}
+          <label className="swap swap-rotate ">
+            {/* this hidden checkbox controls the state */}
+            <input type="checkbox" onChange={handleTheme} />
+            {/* sun icon */}
+            <BsSunFill className="swap-on h-4 w-4" />
+            {/* moon icon */}
+            <BsMoonFill className="swap-off h-4 w-4" />
+          </label>
+          {/* CART LINK*/}
           <NavLink to="cart" className="btn btn-ghost btn-circle btn-md ml-4">
             <div className="indicator">
               <BsCart3 className="h-6 w-6" />
