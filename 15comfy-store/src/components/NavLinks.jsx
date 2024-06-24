@@ -7,7 +7,6 @@ const links = [
   { id: 6, url: "orders", text: "orders" },
 ];
 import { NavLink } from "react-router-dom";
-// syzdavame navlinkovete (pak razlichno pri razlichni ekrani)
 const NavLinks = () => {
   return (
     <>
