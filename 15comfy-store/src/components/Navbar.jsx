@@ -3,8 +3,6 @@ import { FaBarsStaggered } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import NavLinks from "./NavLinks";
 import { useEffect, useState } from "react";
-/* butonyt za smqna na temi veche raboti, izpolzvahme localStorage (vizhda se na screenshot-a). S tova obache ima problem, zashtoto kogato potrebitelqt izleze ot akounta si, tozi
-navbar nqma da go ima, kato e na stranicata za login i register i neshto nqma da e syvsem tochno (nqma da vzima zapametenoto value ot storage-a). Tova bydeshti lekcii shte go opravqme. */
 const themes = {
   winter: "winter",
   sunset: "sunset",
@@ -21,7 +19,6 @@ const Navbar = () => {
     const newTheme = theme === winter ? sunset : winter;
     setTheme(newTheme);
   };
-  // za tova tuk dolu ima razqsnenie v sledvashtiq screenshot
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
