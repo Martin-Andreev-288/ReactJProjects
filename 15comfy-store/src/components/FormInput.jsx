@@ -1,5 +1,3 @@
-/* zapochvame form input-a. Vzehme gotov ot daisyui.com. Napisahme input v tyrsachkata,
-vzehme edin gotov, no i go promenihme (t.e. ne e tochno syshtiq). */
 const FormInput = ({ label, name, type, defaultValue }) => {
   return (
     <div className="form-control">
