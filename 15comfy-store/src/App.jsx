@@ -12,10 +12,6 @@ import {
   Register,
   SingleProduct,
 } from "./pages";
-/* syzdavame route struktura. taka e napraveno, che v home stranicata
-ako napishem sled localhost:5174 stranicata s naklonena cherta - da se
-poqvi tq sys zapomneniq outlet, koyto v sluchaq e comfy. Tova shte byde
-premahnato po-natatyk*/
 const router = createBrowserRouter([
   {
     path: "/",
