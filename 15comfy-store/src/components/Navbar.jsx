@@ -3,7 +3,6 @@ import { FaBarsStaggered } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import NavLinks from "./NavLinks";
 import { useState } from "react";
-/*syzdavame ikonkata za smqna mezhdu dneven/noshten rezhim, koqto oshte ne raboti, est. Izpolzvame daisyUI. */
 const Navbar = () => {
   const [theme, setTheme] = useState(false);
   const handleTheme = () => {
