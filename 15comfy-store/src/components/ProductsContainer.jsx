@@ -3,9 +3,6 @@ import ProductsGrid from "./ProductsGrid";
 import ProductsList from "./ProductsList";
 import { useState } from "react";
 import { BsFillGridFill, BsList } from "react-icons/bs";
-/* Products container. Sega razbrah zashto imame ProductsList i ProductsGrid s 2 otdelni CSS-a -
-prosto za da mozhe user-a da si izbere kak da muse poqvi spisyka s tezi dve butoncheta gore vdqsno -
-ednoto s 4 kvadrata, drugoto s 3 linii (screenshot-i i s dvata) */
 const ProductsContainer = () => {
   const { meta } = useLoaderData();
   const totalProducts = meta.pagination.total;

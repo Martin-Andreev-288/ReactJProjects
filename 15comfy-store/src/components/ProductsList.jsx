@@ -1,7 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { formatPrice } from "../utils";
-/* renderirame produktite kato ProductsList i kato ProductsGrid. Ne shvashtam zasega zashto go
-pravim po tezi 2 nachina, no ima screenshot-i i za dvata -> vizh obqsnenieto vlqvo */
 const ProductsList = () => {
   const { products } = useLoaderData();
 
