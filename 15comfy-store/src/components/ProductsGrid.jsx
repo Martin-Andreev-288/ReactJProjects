@@ -1,6 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { formatPrice } from "../utils";
-// pravim taka, che cenata da izliza v dolari (kakto podobava)
 const ProductsGrid = () => {
   const { products } = useLoaderData();
 
