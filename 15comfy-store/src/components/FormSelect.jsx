@@ -1,5 +1,3 @@
-// Dobavqme razlichni opcii za selectvane/sortirane (screenshot i
-// na 3-te). Izpolzvame daisy UI otnovo
 const FormSelect = ({ label, name, list, defaultValue, size }) => {
   return (
     <div className="form-control">
