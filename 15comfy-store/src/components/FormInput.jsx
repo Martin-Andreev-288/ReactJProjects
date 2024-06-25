@@ -1,4 +1,3 @@
-/* zaemame se s formata za search produkt. Instruktoryt podchertava, che e strashno vazhno da pishem name vyv formata */
 const FormInput = ({ label, name, type, defaultValue, size }) => {
   return (
     <div className="form-control">
