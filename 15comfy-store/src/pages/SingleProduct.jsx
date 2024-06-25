@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { formatPrice, customFetch } from "../utils";
+import { formatPrice, customFetch, generateAmountOptions } from "../utils";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 // da vidim state-ovete
@@ -81,9 +81,7 @@ const SingleProduct = () => {
               value={amount}
               onChange={handleAmount}
             >
-              <option value={1}>1</option>
-              <option value={2}>2</option>
-              <option value={3}>3</option>
+              {generateAmountOptions(20)}
             </select>
           </div>
           {/* CART BUTTON */}
@@ -101,3 +99,8 @@ const SingleProduct = () => {
   );
 };
 export default SingleProduct;
+/* syzdavame generateAmountOptions v index.jsx (vnimanie! Pogreshno go bqh
+ozaglavil samo index.js i dosega beshe s tova greshno ime). Sled tova
+generirame vyzmozhen broy kolichestvo ot produkta do 20 s Array.from.
+generateAmountOptions inache q importvame nay-gore
+*/
