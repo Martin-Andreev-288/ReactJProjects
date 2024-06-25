@@ -2,7 +2,8 @@ import { Form, useLoaderData, Link } from "react-router-dom";
 import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
 import FormRange from "./FormRange";
-// syzdavame formRange (izbirane na ceni ot 0 do 1000 $ s plyzgasht konveyer)
+import FormCheckbox from "./FormCheckbox";
+// dobavqme FormCheckbox -> tova s Free shipping, koeto e s otmetka, koqto mozhe da se maha i slaga
 const Filters = () => {
   const { meta } = useLoaderData();
 
@@ -38,6 +39,8 @@ const Filters = () => {
       />
       {/* PRICE */}
       <FormRange label="select price" name="price" size="range-sm" />
+      {/* SHIPPING */}
+      <FormCheckbox label="free shipping" name="shipping" size="checkbox-sm" />
       {/* BUTTONS */}
       <button type="submit" className="btn btn-primary btn-sm ">
         search
