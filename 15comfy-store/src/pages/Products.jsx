@@ -1,6 +1,5 @@
 import { Filters, PaginationContainer, ProductsContainer } from "../components";
 import { customFetch } from "../utils";
-/* tozi screenshot veche e okonchatelen */
 const url = "/products";
 export const loader = async ({ request }) => {
   const response = await customFetch(url);
