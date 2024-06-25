@@ -3,7 +3,6 @@ import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
 import FormRange from "./FormRange";
 import FormCheckbox from "./FormCheckbox";
-// dobavqme FormCheckbox -> tova s Free shipping, koeto e s otmetka, koqto mozhe da se maha i slaga
 const Filters = () => {
   const { meta } = useLoaderData();
 
