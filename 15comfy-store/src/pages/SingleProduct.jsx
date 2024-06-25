@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { formatPrice, customFetch } from "../utils";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-// vnedrqvame cvetovete. Razlikata e, che s tozi kod pri men sa kvadrati, vmesto krygove
+// da vidim state-ovete
 export const loader = async ({ params }) => {
   const response = await customFetch(`/products/${params.id}`);
   return { product: response.data.data };
@@ -14,6 +14,10 @@ const SingleProduct = () => {
     product.attributes;
   const dollarsAmount = formatPrice(price);
   const [productColor, setProductColor] = useState(colors[0]);
+  const [amount, setAmount] = useState(1);
+  const handleAmount = (e) => {
+    setAmount(parseInt(e.target.value));
+  };
 
   return (
     <section>
@@ -64,6 +68,32 @@ const SingleProduct = () => {
                 );
               })}
             </div>
+          </div>
+          {/* AMOUNT */}
+          <div className="form-control w-full max-w-xs">
+            <label className="label">
+              <h4 className="text-md font-medium tracking-wider capitalize">
+                amount
+              </h4>
+            </label>
+            <select
+              className="select select-secondary select-bordered select-md"
+              value={amount}
+              onChange={handleAmount}
+            >
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+            </select>
+          </div>
+          {/* CART BUTTON */}
+          <div className="mt-10 ">
+            <button
+              className="btn btn-secondary btn-md"
+              onClick={() => console.log("add to bag")}
+            >
+              Add to bag
+            </button>
           </div>
         </div>
       </div>
