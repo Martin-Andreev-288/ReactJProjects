@@ -99,8 +99,3 @@ const SingleProduct = () => {
   );
 };
 export default SingleProduct;
-/* syzdavame generateAmountOptions v index.jsx (vnimanie! Pogreshno go bqh
-ozaglavil samo index.js i dosega beshe s tova greshno ime). Sled tova
-generirame vyzmozhen broy kolichestvo ot produkta do 20 s Array.from.
-generateAmountOptions inache q importvame nay-gore
-*/
