@@ -1,5 +1,5 @@
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
-/* veche e gotov pagination-a. Ako sme na 1-vata i natisnem Prev - ni prashta na poslednata. Ako sme na poslednata i natisnem Next - ni prashta na pyrvata */
+
 const PaginationContainer = () => {
   const { meta } = useLoaderData();
   const { pageCount, page } = meta.pagination;
@@ -21,7 +21,6 @@ const PaginationContainer = () => {
         <button
           className="btn btn-xs sm:btn-md join-item"
           onClick={() => {
-            // tezi 2 reda za prevPage realno trqbvashe da dobavim sega, ne na predniq screenshot
             let prevPage = page - 1;
             if (prevPage < 1) prevPage = pageCount;
             handlePageChange(prevPage);
