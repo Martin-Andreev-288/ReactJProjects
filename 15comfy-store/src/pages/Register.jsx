@@ -1,6 +1,10 @@
 import { FormInput, SubmitBtn } from "../components";
 import { Form, Link } from "react-router-dom";
-// register (kratko, tochno i qsno). Otnovo izplozvame liubimoto tailwind neshto - place-items-center
+// startirame register-a
+export const action = async () => {
+  return null;
+};
+
 const Register = () => {
   return (
     <section className="h-screen grid place-items-center">

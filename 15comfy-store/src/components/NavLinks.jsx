@@ -12,8 +12,6 @@ const links = [
 
 const NavLinks = () => {
   const user = useSelector((state) => state.userState.user);
-  // ako user-a ne e lognat - vryshtame nishto. Syshtoto i ako url === "checkout" || url === "orders". Tezi
-  // komponenti obache oshte ne sa zavyrsheni i mozhe bi zatova ne e qsno. Vizh Cart.jsx tuk
   return (
     <>
       {links.map((link) => {

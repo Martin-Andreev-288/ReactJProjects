@@ -6,8 +6,6 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userState.user);
-  // opravqme funkcionalnost za logout i acces user - 2 screenshot-a i nqkolko neshta za otbelqzvane, vizh screenshotite
-  // ako user-a se razlogne - vryshtame se kym home stranicata, kolichkata se chisti. Natatyk shte pravim oshte
   const handleLogout = () => {
     navigate("/");
     dispatch(clearCart());
