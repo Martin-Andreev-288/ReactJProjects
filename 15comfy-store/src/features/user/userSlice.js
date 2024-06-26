@@ -1,9 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-// syzdavame userSlice, akcentyt e v/u tozi i dolniq fayl
+
+const themes = {
+    winter: "winter",
+    sunset: "sunset",
+};
+
+// tova e, za da getnem value-to na local storage-a, koyto e zapameten v browser-a,
+// kogato komponenta mountne
+const getThemeFromLocalStorage = () => {
+    const theme = localStorage.getItem("theme") || themes.winter;
+    document.documentElement.setAttribute("data-theme", theme);
+    return theme;
+};
+
 const initialState = {
     user: { username: 'coding addict' },
-    theme: 'sunset',
+    theme: getThemeFromLocalStorage(),
 };
 
 const userSlice = createSlice({
@@ -17,7 +30,10 @@ const userSlice = createSlice({
             console.log('logout');
         },
         toggleTheme: (state) => {
-            console.log('toggle theme');
+            const { sunset, winter } = themes;
+            state.theme = state.theme === sunset ? winter : sunset;
+            document.documentElement.setAttribute('data-theme', state.theme);
+            localStorage.setItem('theme', state.theme);
         },
     },
 });

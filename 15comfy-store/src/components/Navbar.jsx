@@ -2,28 +2,18 @@ import { BsCart3, BsMoonFill, BsSunFill } from "react-icons/bs";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import NavLinks from "./NavLinks";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-const themes = {
-  winter: "winter",
-  sunset: "sunset",
-};
-// tova e, za da getnem value-to na local storage-a, koyto e zapameten v browser-a, kogato komponenta mountne
-const getThemeFromLocalStorage = () => {
-  return localStorage.getItem("theme") || themes.winter;
-};
-
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../features/user/userSlice";
+/* popravqme onzi problem sys smqnata na temata, za koyto bqhme spomenali, kato sme na ekrana s login/registraciq.
+Vizh sledvashtiq screenshot, zashtoto v Navbar.jsx iztrihme dosta neshta i promenihme nqkoi (nqkoi ot iztritite
+prenesohme v userSlice.js) */
 const Navbar = () => {
-  const [theme, setTheme] = useState(getThemeFromLocalStorage());
+  const dispatch = useDispatch();
+
   const handleTheme = () => {
-    const { winter, sunset } = themes;
-    const newTheme = theme === winter ? sunset : winter;
-    setTheme(newTheme);
+    dispatch(toggleTheme());
   };
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+
   const numItemsInCart = useSelector((state) => state.cartState.numItemsInCart);
 
   return (
