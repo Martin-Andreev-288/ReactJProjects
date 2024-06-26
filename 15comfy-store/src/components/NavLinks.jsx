@@ -1,3 +1,6 @@
+import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+
 const links = [
   { id: 1, url: "/", text: "home" },
   { id: 2, url: "about", text: "about" },
@@ -6,12 +9,16 @@ const links = [
   { id: 5, url: "checkout", text: "checkout" },
   { id: 6, url: "orders", text: "orders" },
 ];
-import { NavLink } from "react-router-dom";
+
 const NavLinks = () => {
+  const user = useSelector((state) => state.userState.user);
+  // ako user-a ne e lognat - vryshtame nishto. Syshtoto i ako url === "checkout" || url === "orders". Tezi
+  // komponenti obache oshte ne sa zavyrsheni i mozhe bi zatova ne e qsno. Vizh Cart.jsx tuk
   return (
     <>
       {links.map((link) => {
         const { id, url, text } = link;
+        if ((url === "checkout" || url === "orders") && !user) return null;
         return (
           <li key={id}>
             <NavLink className="capitalize" to={url}>

@@ -5,7 +5,6 @@ const themes = {
     winter: "winter",
     sunset: "sunset",
 };
-
 // tova e, za da getnem value-to na local storage-a, koyto e zapameten v browser-a,
 // kogato komponenta mountne
 const getThemeFromLocalStorage = () => {
@@ -27,7 +26,10 @@ const userSlice = createSlice({
             console.log('login');
         },
         logoutUser: (state) => {
-            console.log('logout');
+            state.user = null;
+            // localStorage.clear()
+            localStorage.removeItem('user');
+            toast.success('Logged out successfully');
         },
         toggleTheme: (state) => {
             const { sunset, winter } = themes;

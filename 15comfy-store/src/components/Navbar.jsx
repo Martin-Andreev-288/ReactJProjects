@@ -4,9 +4,6 @@ import { NavLink } from "react-router-dom";
 import NavLinks from "./NavLinks";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../features/user/userSlice";
-/* popravqme onzi problem sys smqnata na temata, za koyto bqhme spomenali, kato sme na ekrana s login/registraciq.
-Vizh sledvashtiq screenshot, zashtoto v Navbar.jsx iztrihme dosta neshta i promenihme nqkoi (nqkoi ot iztritite
-prenesohme v userSlice.js) */
 const Navbar = () => {
   const dispatch = useDispatch();
 
