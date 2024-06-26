@@ -4,8 +4,6 @@ import { NavLink } from "react-router-dom";
 import NavLinks from "./NavLinks";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-/* veche mozhem da dobavim produkti v kolichkata. Zapazva se v localStorage. No vse oshte ako refreshnem, shte se
-izgubi/izgubqt. Inache se zapazva, kato natisnem "Add to bag" (izliza toastify syobshtenie) */
 const themes = {
   winter: "winter",
   sunset: "sunset",
