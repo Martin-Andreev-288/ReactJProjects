@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { CartItemsList, SectionTitle, CartTotals } from "../components";
 import { Link } from "react-router-dom";
-// Zapochvame da syzdavame cart-a
 const Cart = () => {
   // temp
   const user = null;

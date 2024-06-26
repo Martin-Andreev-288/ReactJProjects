@@ -1,5 +1,4 @@
-/* Renderirame featured products. we will use this all throughout the project.
- Tova shte se preizpolzva nqkolko pyti v proekta */
+/* Renderirame featured products. we will use this all throughout the project. */
 const SectionTitle = ({ text }) => {
   return (
     <div className="border-b border-base-300 pb-5">
