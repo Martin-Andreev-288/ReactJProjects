@@ -2,8 +2,6 @@ import { formatPrice, generateAmountOptions } from "../utils";
 import { removeItem, editItem } from "../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
 
-//nqma promeni sprqmo predniq screenshot -> tuk vnedrqvame opciite za removeItem i handleAmount. Priemi go kato otdelna
-// lekciq
 const CartItem = ({ cartItem }) => {
   const dispatch = useDispatch();
 
