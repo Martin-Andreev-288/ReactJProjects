@@ -1,8 +1,25 @@
 import { FormInput, SubmitBtn } from "../components";
-import { Form, Link } from "react-router-dom";
-// startirame register-a
-export const action = async () => {
-  return null;
+import { Form, redirect, Link } from "react-router-dom";
+/* dovyrshvame register-a. Tezi defaultValues shte bydat iztriti sled screenshot-a.
+Sega ako cyknem register - shte se registrirame. Ako go napravim pak sys syshtite danni - shte
+ni dade greshka, che veche ima potrebitel s tezi danni. Ne gleday readme-to*/
+import { customFetch } from "../utils";
+import { toast } from "react-toastify";
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  try {
+    const response = await customFetch.post("/auth/local/register", data);
+    toast.success("account created successfully");
+    return redirect("/login");
+  } catch (error) {
+    const errorMessage =
+      error?.response?.data?.error?.message ||
+      "please double check your credentials";
+
+    toast.error(errorMessage);
+    return null;
+  }
 };
 
 const Register = () => {
