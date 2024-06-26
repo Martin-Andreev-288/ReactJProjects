@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { formatPrice } from "../utils";
-// cart totals, t.e. da se pokazva obshtata cena na vsichki izbrani produkti v cart-a (kolichkata)
 const CartTotals = () => {
   const { cartTotal, shipping, tax, orderTotal } = useSelector(
     (state) => state.cartState
