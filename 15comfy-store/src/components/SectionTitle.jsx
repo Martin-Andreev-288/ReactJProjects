@@ -1,5 +1,5 @@
 /* Renderirame featured products. we will use this all throughout the project.
- Syzdadohme nqkolko neshta, koito shte preizpolzvame po-natatyk v proekta */
+ Tova shte se preizpolzva nqkolko pyti v proekta */
 const SectionTitle = ({ text }) => {
   return (
     <div className="border-b border-base-300 pb-5">

@@ -11,8 +11,6 @@ const defaultState = {
 const getCartFromLocalStorage = () => {
     return JSON.parse(localStorage.getItem('cart')) || defaultState;
 };
-// dobavqme clear, edit & edit reducers. Ne gleday readme-to (e, mozhe da vidish obqsneniqta).
-// Inache samo gi dobavqme, oshte gi nqma v sayta
 const cartSlice = createSlice({
     name: 'cart',
     initialState: getCartFromLocalStorage(),
