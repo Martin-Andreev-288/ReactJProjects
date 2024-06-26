@@ -1,14 +1,18 @@
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
-// zapochvame da syzdavame stranicite (dolu vdqsno), tova, koeto lipsvashe v nashiq vtori proekt s foruma. Zasega samo logva vyrhu kakvoto sme natisnali (tova e nachaloto)
+/* veche e gotov pagination-a. Ako sme na 1-vata i natisnem Prev - ni prashta na poslednata. Ako sme na poslednata i natisnem Next - ni prashta na pyrvata */
 const PaginationContainer = () => {
   const { meta } = useLoaderData();
   const { pageCount, page } = meta.pagination;
   const pages = Array.from({ length: pageCount }, (_, index) => {
     return index + 1;
   });
+  const { search, pathname } = useLocation();
+  const navigate = useNavigate();
 
   const handlePageChange = (pageNumber) => {
-    console.log(pageNumber);
+    const searchParams = new URLSearchParams(search);
+    searchParams.set("page", pageNumber);
+    navigate(`${pathname}?${searchParams.toString()}`);
   };
 
   return (
@@ -17,9 +21,10 @@ const PaginationContainer = () => {
         <button
           className="btn btn-xs sm:btn-md join-item"
           onClick={() => {
+            // tezi 2 reda za prevPage realno trqbvashe da dobavim sega, ne na predniq screenshot
             let prevPage = page - 1;
             if (prevPage < 1) prevPage = pageCount;
-            handlePageChange("prev");
+            handlePageChange(prevPage);
           }}
         >
           Prev
@@ -40,7 +45,9 @@ const PaginationContainer = () => {
         <button
           className="btn btn-xs sm:btn-md join-item"
           onClick={() => {
-            handlePageChange("next");
+            let nextPage = page - 1;
+            if (nextPage > pageCount) nextPage = 1;
+            handlePageChange(nextPage);
           }}
         >
           Next
