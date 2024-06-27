@@ -2,8 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import day from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 day.extend(advancedFormat);
-/* orders list list s porychkite - tova e i finalen screenshot, i da vidim kakvo logva na orders.
- Pagination-a opravqme v drugata lekciq */
+
 const OrdersList = () => {
   const { orders, meta } = useLoaderData();
   return (
@@ -25,7 +24,6 @@ const OrdersList = () => {
           </thead>
           <tbody>
             {orders.map((order) => {
-              console.log(order);
               const id = order.id;
               const { name, address, numItemsInCart, orderTotal, createdAt } =
                 order.attributes;
