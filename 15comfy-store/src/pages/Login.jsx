@@ -1,14 +1,33 @@
 import { FormInput, SubmitBtn } from "../components";
-import { Form, Link } from "react-router-dom";
-/* useDispatch tuk nqma da raboti, zashtoto action f-qta dolu ne e hook. Tova i spored
-instruktora e obyrkvashto na loader-ite i action-ite. V sluchaq store has all of the
-methods and properties that we're looking for. Ot neshtata, koito logva, shte izpolzvame
-dispatch-a. -> So that's the one we're going to use. And of course we're goint to pass
-in our action. */
-export const action = (store) => async () => {
-  console.log(store);
-  return null;
-};
+import { Form, Link, redirect, useNavigate } from "react-router-dom";
+import { customFetch } from "../utils";
+import { toast } from "react-toastify";
+import { loginUser } from "../features/user/userSlice";
+import { useDispatch } from "react-redux";
+// predishniq screenshot beshe sys syshtata funkcionalnost,tozi e samo zaradi tozi komentar
+// zapochvame aktivno rabota po login stranicata
+// identichno na tova, koeto imame v register.jsx. Razlichnoto shte e URL-a i nakyde shte
+// ni otprati, kato cyknem login butona
+export const action =
+  (store) =>
+  async ({ request }) => {
+    const formData = await request.formData();
+    const data = Object.fromEntries(formData);
+    try {
+      const response = await customFetch.post("/auth/local", data);
+      store.dispatch(loginUser(response.data));
+      toast.success("logged in successfully");
+      return redirect("/");
+    } catch (error) {
+      console.log(error);
+      const errorMessage =
+        error?.response?.data?.error?.message ||
+        "please double check your credentials";
+
+      toast.error(errorMessage);
+      return null;
+    }
+  };
 
 const Login = () => {
   return (
