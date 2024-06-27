@@ -4,8 +4,8 @@ import SubmitBtn from "./SubmitBtn";
 import { customFetch, formatPrice } from "../utils";
 import { toast } from "react-toastify";
 import { clearCart } from "../features/cart/cartSlice";
-/* zavyrshvame checkout page-a. Ostavih i loga, za da vidim kakvo logva na response-a, kato
-natisnem "place your order" v checkout page-a (struva mi se polezno) */
+// pravim drebna promqna - da ni prenasochi kym login stranicata, ako tipyt greshka e 401/403
+// nqma da zapisvam zashto, gleday videoto, ako precenish (lekciq 507)
 export const action =
   (store) =>
   async ({ request }) => {
@@ -33,7 +33,7 @@ export const action =
           },
         }
       );
-      console.log(response);
+      //   console.log(response);
       store.dispatch(clearCart());
       toast.success("order placed successfully");
       return redirect("/orders");
@@ -44,6 +44,8 @@ export const action =
         "there was an error placing your order";
 
       toast.error(errorMessage);
+      if (error?.response?.status === 401 || 403) return redirect("/login");
+
       return null;
     }
   };
