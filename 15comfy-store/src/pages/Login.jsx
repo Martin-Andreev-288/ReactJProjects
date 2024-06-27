@@ -4,10 +4,6 @@ import { customFetch } from "../utils";
 import { toast } from "react-toastify";
 import { loginUser } from "../features/user/userSlice";
 import { useDispatch } from "react-redux";
-// predishniq screenshot beshe sys syshtata funkcionalnost,tozi e samo zaradi tozi komentar
-// zapochvame aktivno rabota po login stranicata
-// identichno na tova, koeto imame v register.jsx. Razlichnoto shte e URL-a i nakyde shte
-// ni otprati, kato cyknem login butona
 export const action =
   (store) =>
   async ({ request }) => {
