@@ -4,8 +4,7 @@ import SubmitBtn from "./SubmitBtn";
 import { customFetch, formatPrice } from "../utils";
 import { toast } from "react-toastify";
 import { clearCart } from "../features/cart/cartSlice";
-// pravim drebna promqna - da ni prenasochi kym login stranicata, ako tipyt greshka e 401/403
-// nqma da zapisvam zashto, gleday videoto, ako precenish (lekciq 507)
+
 export const action =
   (store) =>
   async ({ request }) => {
