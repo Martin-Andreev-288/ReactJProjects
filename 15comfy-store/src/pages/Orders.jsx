@@ -2,12 +2,6 @@ import { redirect, useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
 import { customFetch } from "../utils";
 import { OrdersList, PaginationContainer, SectionTitle } from "../components";
-/* startirame s orders page. Ponezhe nqma kak vsichko da se zasneme, postarah se da sybera kakvoto e vazhno i kakto e ok
-Ideqta e i da vidim kakvo logva */
-const Orders = () => {
-  return <h1 className="text-4xl">Orders</h1>;
-};
-export default Orders;
 
 export const loader =
   (store) =>
@@ -31,7 +25,6 @@ export const loader =
           Authorization: `Bearer ${user.token}`,
         },
       });
-      console.log(response);
       return { orders: response.data.data, meta: response.data.meta };
     } catch (error) {
       console.log(error);
@@ -45,3 +38,18 @@ export const loader =
       return null;
     }
   };
+
+const Orders = () => {
+  const { meta } = useLoaderData();
+  if (meta.pagination.total < 1) {
+    return <SectionTitle text="Please make an order" />;
+  }
+  return (
+    <>
+      <SectionTitle text="Your Orders" />
+      <OrdersList />
+      <PaginationContainer />
+    </>
+  );
+};
+export default Orders;
