@@ -2,10 +2,6 @@ import { useSelector } from "react-redux";
 import { CheckoutForm, SectionTitle, CartTotals } from "../components";
 import { redirect } from "react-router-dom";
 import { toast } from "react-toastify";
-/* tuk useSelector nqma da raboti. And just like in the previous setup, we simply need to go
-back to app.jsx and we need to pass in the store (that's the only "gotcha" :) )
-Sega veche ako opitame da vlezem v checkout, ako ne sme lognati - shte ni dade tazi
-greshka i shte ni prenasochi kym login stranicata */
 
 export const loader = (store) => async () => {
   const user = store.getState().userState.user;

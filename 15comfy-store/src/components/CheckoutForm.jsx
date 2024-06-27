@@ -4,13 +4,49 @@ import SubmitBtn from "./SubmitBtn";
 import { customFetch, formatPrice } from "../utils";
 import { toast } from "react-toastify";
 import { clearCart } from "../features/cart/cartSlice";
-/* in order to access the state values, we need to set up an action which returns a function
-because in the app, JSX, we're going to pass in the store. We already did that few times
-Tova e nachaloto. Okonchatelen screenshot. Celta e i da vidim kakvo se logva. */
-export const action = (store) => async () => {
-  console.log(store);
-  return null;
-};
+/* zavyrshvame checkout page-a. Ostavih i loga, za da vidim kakvo logva na response-a, kato
+natisnem "place your order" v checkout page-a (struva mi se polezno) */
+export const action =
+  (store) =>
+  async ({ request }) => {
+    const formData = await request.formData();
+    const { name, address } = Object.fromEntries(formData);
+    const user = store.getState().userState.user;
+    const { cartItems, orderTotal, numItemsInCart } =
+      store.getState().cartState;
+
+    const info = {
+      name,
+      address,
+      chargeTotal: orderTotal,
+      orderTotal: formatPrice(orderTotal),
+      cartItems,
+      numItemsInCart,
+    };
+    try {
+      const response = await customFetch.post(
+        "/orders",
+        { data: info },
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      console.log(response);
+      store.dispatch(clearCart());
+      toast.success("order placed successfully");
+      return redirect("/orders");
+    } catch (error) {
+      console.log(error);
+      const errorMessage =
+        error?.response?.data?.error?.message ||
+        "there was an error placing your order";
+
+      toast.error(errorMessage);
+      return null;
+    }
+  };
 
 const CheckoutForm = () => {
   return (
