@@ -24,9 +24,6 @@ export const action =
       return null;
     }
   };
-/* prodylzhavame s login-a. Mahame defaultValues-ite. Sega ako sme lognati - vizhdame
-vsichki stranici ot navbar-a, ako sme logoutnati - samo opredeleni (tova ne shvanah kak
-tochno se e poluchilo) */
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
