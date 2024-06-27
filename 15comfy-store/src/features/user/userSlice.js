@@ -5,7 +5,7 @@ const themes = {
     winter: "winter",
     sunset: "sunset",
 };
-// dobavqme neshta kym reducer-a, svyrzan s login
+
 const getUserFromLocalStorage = () => {
     return JSON.parse(localStorage.getItem('user')) || null;
 };
