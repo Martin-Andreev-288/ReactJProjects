@@ -1,5 +1,15 @@
 import { FormInput, SubmitBtn } from "../components";
 import { Form, Link } from "react-router-dom";
+/* useDispatch tuk nqma da raboti, zashtoto action f-qta dolu ne e hook. Tova i spored
+instruktora e obyrkvashto na loader-ite i action-ite. V sluchaq store has all of the
+methods and properties that we're looking for. Ot neshtata, koito logva, shte izpolzvame
+dispatch-a. -> So that's the one we're going to use. And of course we're goint to pass
+in our action. */
+export const action = (store) => async () => {
+  console.log(store);
+  return null;
+};
+
 const Login = () => {
   return (
     <section className="h-screen grid place-items-center">
