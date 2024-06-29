@@ -1,5 +1,4 @@
 // const btn = document.querySelector('.test-btn'); // btn obache mozhe da e i Element, i null, zatova tr da pravim proverka
-/* syzdavame typeScript proekt. Stigame do osnovnoto neshto, koeto stroim, po malko stranen nachin - cykame na nqkoe ot izobrazheniqta na vite ili typescript i ni go otvarq  */
 const taskForm = document.querySelector<HTMLFormElement>('.form');
 const formInput = document.querySelector<HTMLInputElement>('.form-input');
 const taskListElement = document.querySelector<HTMLUListElement>('.list');
@@ -9,18 +8,60 @@ type Task = {
     isCompleted: boolean;
 };
 
-const tasks: Task[] = [];
+const tasks: Task[] = loadTasks();
+
+tasks.forEach(renderTask);
+
+// Load tasks from localStorage
+function loadTasks(): Task[] {
+    const storedTasks = localStorage.getItem('tasks');
+    return storedTasks ? JSON.parse(storedTasks) : [];
+}
 
 taskForm?.addEventListener('submit', (event) => {
     event.preventDefault();
     const taskDescription = formInput?.value;
     if (taskDescription) {
+        const task: Task = {
+            description: taskDescription,
+            isCompleted: false,
+        };
         // add task to list
+        addTask(task);
         // render tasks
+        renderTask(task);
         // update local storage
-
+        updateStorage();
         formInput.value = '';
         return;
     }
     alert('Please enter a task description');
 });
+
+function addTask(task: Task): void {
+    tasks.push(task);
+    console.log(tasks);
+}
+
+function renderTask(task: Task): void {
+    const taskElement = document.createElement('li');
+    taskElement.textContent = task.description;
+    // checkbox
+    const taskCheckbox = document.createElement('input');
+    taskCheckbox.type = 'checkbox';
+    taskCheckbox.checked = task.isCompleted;
+
+    // toggle checkbox
+    taskCheckbox.addEventListener('change', () => {
+        task.isCompleted = !task.isCompleted;
+        updateStorage();
+    });
+
+    taskElement.appendChild(taskCheckbox);
+    taskListElement?.appendChild(taskElement);
+}
+
+// Update tasks in localStorage
+function updateStorage(): void {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
