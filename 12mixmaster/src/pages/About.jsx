@@ -1,5 +1,5 @@
 import Wrapper from "../assets/wrappers/AboutPage";
-// prosto pravim about stranicata.
+
 const About = () => {
   return (
     <Wrapper>

@@ -16,7 +16,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </QueryClientProvider>
   </AppProvider>
 );
-
-// kak da instalirame react query dev tools - npm i @tanstack/react-query-devtools, sled tova npm run dev
-// i vizhdame prozorec (tozi dolu vlqvo) where i can find bunch of useful info about my queries.
-// za da go zatvorim - prosto cykame na cveteto ili promenqme initialIsOpen na false

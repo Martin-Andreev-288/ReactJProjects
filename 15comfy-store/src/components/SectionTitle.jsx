@@ -1,4 +1,4 @@
-/* Renderirame featured products. we will use this all throughout the project. */
+/* We are rendering featured products. We'll use this all throughout the project. */
 const SectionTitle = ({ text }) => {
   return (
     <div className="border-b border-base-300 pb-5">

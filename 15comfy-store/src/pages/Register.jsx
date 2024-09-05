@@ -1,8 +1,6 @@
 import { FormInput, SubmitBtn } from "../components";
 import { Form, redirect, Link } from "react-router-dom";
-/* dovyrshvame register-a. Tezi defaultValues shte bydat iztriti sled screenshot-a.
-Sega ako cyknem register - shte se registrirame. Ako go napravim pak sys syshtite danni - shte
-ni dade greshka, che veche ima potrebitel s tezi danni. Ne gleday readme-to*/
+
 import { customFetch } from "../utils";
 import { toast } from "react-toastify";
 export const action = async ({ request }) => {

@@ -4,9 +4,7 @@ import Wrapper from "../assets/wrappers/CocktailPage";
 const singleCocktailUrl =
   "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 import { useQuery } from "@tanstack/react-query";
-/* dovyrshvame react query (tuk vyv single cocktail page). Sega ako veche sme otvarqli nqkoy
-kokteyl - shte se zaredi po-byrzo, ako go otvorim pak.
-Tr da zapomnim, che v loader ne mozhem da izpolzvame hooks. */
+
 const singleCocktailQuery = (id) => {
   return {
     queryKey: ["cocktail", id],

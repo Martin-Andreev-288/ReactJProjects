@@ -9,8 +9,7 @@ const themes = {
 const getUserFromLocalStorage = () => {
     return JSON.parse(localStorage.getItem('user')) || null;
 };
-// tova e, za da getnem value-to na local storage-a, koyto e zapameten v browser-a,
-// kogato komponenta mountne
+
 const getThemeFromLocalStorage = () => {
     const theme = localStorage.getItem("theme") || themes.winter;
     document.documentElement.setAttribute("data-theme", theme);

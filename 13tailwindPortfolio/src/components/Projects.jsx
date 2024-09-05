@@ -1,7 +1,7 @@
 import ProjectsCard from "./ProjectsCard";
 import { projects } from "../data";
 import SectionTitle from "./SectionTitle";
-// renderirame proektite
+// rendering the projects
 const Projects = () => {
   return (
     <section className="py-20 align-element" id="projects">

@@ -3,8 +3,7 @@ import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
 import FormRange from "./FormRange";
 import FormCheckbox from "./FormCheckbox";
-/* za da ne se nalozhi "to start from scratch", kato prezaredim (t.e. naprimer za da ne se mahne otmetkata
-na "Free Shipping", kato prezaredim) slagame tezi defaultValue */
+
 const Filters = () => {
   const { meta, params } = useLoaderData();
   const { search, company, category, shipping, order, price } = params;

@@ -15,10 +15,10 @@ const url = "https://www.course-api.com/react-useReducer-cart-project";
 const AppContext = createContext();
 
 const initialState = {
-  loading: false, // tuk pak go slagame na false
+  loading: false,
   cart: new Map(),
 };
-/*dovyrhsvane na loading-a, dobavqme go v reducer-a. Pravim taka i che da se displaynat vsichki item-i */
+
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { totalAmount, totalCost } = getTotals(state.cart);
@@ -44,7 +44,7 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     fetchData();
   }, []);
-  // i taka mozhem da dostypvame state-a ot cqloto prilozhenie
+
   return (
     <AppContext.Provider
       value={{

@@ -1,5 +1,5 @@
 import { useFetchProjects } from "./fetchProjects";
-// okonchatelnoto renderirane na proektite
+
 const Projects = () => {
   const { loading, projects } = useFetchProjects();
 

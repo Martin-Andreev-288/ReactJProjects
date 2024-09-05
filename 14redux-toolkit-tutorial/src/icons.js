@@ -1,4 +1,4 @@
-/* tuk vzimame ikonki ot https://heroicons.com/ */
+/* We take icons from https://heroicons.com/ */
 
 export const CartIcon = () => {
   return (

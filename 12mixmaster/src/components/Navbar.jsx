@@ -22,10 +22,3 @@ const Navbar = () => {
   );
 };
 export default Navbar;
-
-/*
-ako naprimer imame "logo" (ime na class) i v drug komponent, tova nqma da e problem.
-Ako go imame globalno obache, shte e problem.
-Name kolizii NE SE sluchvat s drugi komponenti, no s globalni elementi - da. Zatova tr da
-vnimavame
-*/

@@ -1,8 +1,7 @@
 import Wrapper from "../assets/wrappers/ErrorPage";
 import { Link, useRouteError } from "react-router-dom";
 import img from "../assets/not-found.svg";
-/* pravim taka, che da se poqvqva opredeleno neshto pri greshka 404 (opit za dostyp na
-nesyshtestvuvashta stranica) */
+
 const Error = () => {
   const error = useRouteError();
   console.log(error);

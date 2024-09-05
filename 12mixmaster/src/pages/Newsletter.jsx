@@ -19,7 +19,6 @@ export const action = async ({ request }) => {
   }
 };
 const Newsletter = () => {
-  // tuk gledame kak da submitnem formi v po-novata React Router versiq
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
   return (

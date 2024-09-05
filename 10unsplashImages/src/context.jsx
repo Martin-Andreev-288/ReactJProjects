@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-// zapazvane na tymna tema s localStorage
+
 const AppContext = createContext();
 const getInitialDarkMode = () => {
   const prefersDarkMode = window.matchMedia(

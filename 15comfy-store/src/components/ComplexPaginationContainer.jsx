@@ -1,6 +1,3 @@
-/* pagination-a veche e izcqlo gotov. Po-dobre otvori, za da vidish kak e tochno, nz dali si struva da se pravqt
-nqkolko screenshot-a
-tova e pochti syshtiq setup, kakto za originalniq pagination container */
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 
 const ComplexPaginationContainer = () => {

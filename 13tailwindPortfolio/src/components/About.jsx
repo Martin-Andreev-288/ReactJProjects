@@ -4,8 +4,6 @@ const About = () => {
   return (
     <section className="bg-white py-20" id="about">
       <div className="align-element grid md:grid-cols-2 items-center gap-16">
-        {/* tova w-full dolu, koeto e ravno na width: 100% e sprqmo roditelq, t.e. div-a (shte zaema 100%
-        v nego) */}
         <img src={aboutSvg} className="w-full h-64" />
         <article>
           <SectionTitle text="code and coffee" />

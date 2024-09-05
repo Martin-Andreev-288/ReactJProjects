@@ -1,4 +1,4 @@
-Vypros otnosno edno neshto ot lekciq 46. set theme ot kursa na John Smilga s 25 reakt proekta:
+Question about one thing from lecture 46. set theme:
 
 I can catch the logic only in this row: document.documentElement.setAttribute("data-theme", theme);
 Can you explain it to myself? Is it something that we must learn by heart, or? Because it doesn't look intuitive or straightforward, at least for me.

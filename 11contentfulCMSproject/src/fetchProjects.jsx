@@ -6,13 +6,6 @@ const client = createClient({
   accessToken: "wgGncEGBL-EYU0SA66iQtLnO2OjUdWhXKqBIBR8rOzA",
 });
 
-/*
-Tezi dve neshta gi vzehme ot contentful sayta (i sega gi vnedrqvame gore):
-Space ID - gqk0veg6v1tk
-Access Token - wgGncEGBL-EYU0SA66iQtLnO2OjUdWhXKqBIBR8rOzA
-*/
-
-/* imeto na content_type-a dolu e imeto, koeto sme dali na proektite v contentful sayta */
 export const useFetchProjects = () => {
   const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState([]);

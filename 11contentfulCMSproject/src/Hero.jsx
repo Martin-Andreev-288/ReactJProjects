@@ -1,5 +1,5 @@
 import heroImg from "./assets/hero.svg";
-// na po-golqm ekran se vizhda izobrazhenieto, na po-malyk - ne. Tuk se vizhda.
+
 const Hero = () => {
   return (
     <section className="hero">

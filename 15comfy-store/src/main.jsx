@@ -7,7 +7,7 @@ import "./index.css";
 import { ToastContainer } from "react-toastify";
 import { store } from "./store";
 import { Provider } from "react-redux";
-// v tozi sluchay mahame strict mode-a
+// In this case we removed the strict mode
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <App />

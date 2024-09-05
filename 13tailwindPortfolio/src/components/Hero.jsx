@@ -24,8 +24,6 @@ const Hero = () => {
             </a>
           </div>
         </article>
-        {/* tuk pri malyk ekran snimkata e skrita, no pri po-golqm, koyto za md e 768px, hidden-a shte se
-        blokira i izobrazhenieto shte se pokazhe (kakto e tuk) */}
         <article className="hidden md:block">
           <img src={heroImg} className="h-80 lg:h-96" />
         </article>

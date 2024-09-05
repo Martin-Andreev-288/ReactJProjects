@@ -62,21 +62,12 @@ html {
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  /* dark mode setup
-  DOBAVQNE NA CSS, ZA DA NASTROIM OPCIQTA ZA SMQNA KYM DNEVNA/NOSHTNA TEMA
-  PRAVIM GO PO NACHIN, PO KOYTO DA TR DA PROMENQME PO-MALKO KOD, AKO SE NALOZHI*/
   --dark-mode-bg-color: #333;
   --dark-mode-text-color: #f0f0f0;
   --backgroundColor: var(--grey-50);
   --textColor: var(--grey-900);
   --darkModeTransition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
-
-/* kak da napravim taka, che da zadadem tymna tema za default, ako user-a si e izbral
-neq. Ppc na firefox se vizhda vednaga, za da vidim kak se poluchava v chrome, tr da
-instalirame neshto dopylnitelno -> tova v @media (otkomentiranoto)
-shte ni se pokazhe kak stava i s javascript -> V CONTEXT.JSX V TOZI SCREENSHOT
-SE POKAZVA TOCHNO TOVA */
 
 /* @media (prefers-color-scheme: dark) {
   :root {
