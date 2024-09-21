@@ -23,4 +23,4 @@ The repository is not intended for commercial use, but rather to document my lea
  - Run npm run dev (or npm start ONLY for the project in folder 15comfy-store).
 
 ## Original Course
-This project is based on the course by John Smilga: [Complete React, Next.js & TypeScript Projects Course 2024](https://www.udemy.com/course/react-tutorial-and-projects-course/?couponCode=OF83024D).
+These projects are based on the course by John Smilga: [Complete React, Next.js & TypeScript Projects Course 2024](https://www.udemy.com/course/react-tutorial-and-projects-course).
